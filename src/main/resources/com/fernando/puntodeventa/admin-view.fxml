@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fernando.puntodeventa.AdminController">
+    <children>
+      <TabPane layoutX="13.0" layoutY="107.0" prefHeight="484.0" prefWidth="778.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Recursos Humanos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="542.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="51.0" text="Nombre" />
+                        <Label layoutX="22.0" layoutY="92.0" text="Primer Apellido" />
+                        <Label layoutX="17.0" layoutY="133.0" text="Segundo Apellido" />
+                        <Label layoutX="16.0" layoutY="173.0" text="fecha entrada" />
+                        <Label layoutX="17.0" layoutY="209.0" text="id puesto" />
+                        <TextField fx:id="txtNuevoNombre" layoutX="121.0" layoutY="47.0" />
+                        <TextField fx:id="txtPrimerapellido" layoutX="121.0" layoutY="88.0" />
+                        <TextField fx:id="txtsegundoapellido" layoutX="121.0" layoutY="129.0" />
+                        <TextField fx:id="txtNuevoPuesto" layoutX="121.0" layoutY="204.0" />
+                        <Button fx:id="btnAgregarEmpleado" layoutX="287.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnAgregarEmpleado" text="Agregar" />
+                        <Button fx:id="btnEditarCampos" layoutX="438.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnEditarCampos" prefHeight="35.0" prefWidth="56.0" text="Editar" />
+                        <Button fx:id="btnEliminarEmpleado" layoutX="614.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnEliminarEmpleado" prefHeight="35.0" prefWidth="70.0" text="Eliminar" />
+                        <Polyline fill="CHARTREUSE" layoutX="102.0" layoutY="257.0" points="-50.0, -40.0, 376.5999755859375, -39.99998474121094, -50.0, -39.99998474121094, -50.0, -40.0" strokeType="INSIDE" />
+                        <Line endX="607.5999755859375" endY="1.52587890625E-5" layoutX="118.0" layoutY="239.0" startX="-100.0" stroke="#535353" strokeWidth="3.0" />
+                        <TableView fx:id="tablaEmpleados" layoutY="250.0" prefHeight="190.0" prefWidth="626.0">
+                            <columns>
+                                <TableColumn fx:id="colId" prefWidth="38.4000244140625" text="ID" />
+                                <TableColumn fx:id="colIdPuesto" prefWidth="68.0" text="ID Puesto" />
+
+                                <!-- LÍNEA RECUPERADA -->
+                                <TableColumn fx:id="colNombre" prefWidth="87.20001220703125" text="Nombre" />
+
+                                <TableColumn fx:id="colPrimerApellido" prefWidth="96.800048828125" text="Primer Apellido" />
+                                <TableColumn fx:id="colSegundoApellido" prefWidth="110.40008544921875" text="Segundo Apellido" />
+                                <TableColumn fx:id="colFecha" prefWidth="56.0" text="Fecha" />
+                                <TableColumn fx:id="colContraseña" prefWidth="73.60001220703123" text="Contraseña" />
+                                <TableColumn fx:id="colDisponibilidadEmpleado" prefWidth="73.60001220703123" text="Disponibilidad" />
+                            </columns>
+                        </TableView>
+                        <Line endX="55.5999755859375" endY="77.80000305175781" layoutX="313.0" layoutY="139.0" startX="55.5999755859375" startY="-106.20001220703125" stroke="#535353" strokeWidth="3.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff59" height="25.0" layoutX="104.0" layoutY="10.0" opacity="0.54" stroke="BLACK" strokeType="INSIDE" width="183.0" />
+                        <Label layoutX="125.0" layoutY="14.0" text="Registrar Nuevo Empleado" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff59" height="25.0" layoutX="466.0" layoutY="10.0" opacity="0.54" stroke="BLACK" strokeType="INSIDE" width="183.0" />
+                        <Label layoutX="512.0" layoutY="14.0" text="Buscar Empleado" />
+                        <TextField fx:id="txtDatoBusqueda" layoutX="483.0" layoutY="47.0" prefHeight="26.0" prefWidth="210.0" />
+                        <TableView fx:id="tablaTrabajos" layoutX="637.0" layoutY="250.0" prefHeight="190.0" prefWidth="130.0">
+                           <columns>
+                              <TableColumn fx:id="IDPuesto" prefWidth="59.99993896484375" text="ID Puesto" />
+                              <TableColumn fx:id="colPuestoTabla" prefWidth="47.2000732421875" text="Puesto" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="411.0" layoutY="51.0" text="Dato Clave" />
+                        <Button fx:id="btnBuscarEmpleado" layoutX="702.0" layoutY="47.0" mnemonicParsing="false" onAction="#btnBuscarEmpleado" text="Buscar" />
+                         <DatePicker fx:id="dpNuevaFecha" layoutX="122.0" layoutY="169.0" prefHeight="26.0" prefWidth="146.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Busqueda en Catalogo Comercial">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="603.0">
+                     <children>
+                        <TableView fx:id="TablaCatalogo" layoutX="21.0" layoutY="242.0" prefHeight="199.0" prefWidth="741.0">
+                          <columns>
+                            <TableColumn fx:id="col_id_producto" prefWidth="41.0" text="ID" />
+                            <TableColumn fx:id="col_producto" prefWidth="266.0" text="Producto" />
+                              <TableColumn fx:id="col_id_provedor_tablaproducto" prefWidth="85.0" text="ID_Provedor" />
+                              <TableColumn fx:id="col_id_categoria_tablaproducto" prefWidth="84.0" text="ID_Categoria" />
+                              <TableColumn fx:id="col_costo_u" prefWidth="65.0" text="Costo/u" />
+                              <TableColumn fx:id="col_precio_u" prefWidth="72.0" text="Precio /u" />
+                              <TableColumn fx:id="col_precio_c" prefWidth="65.0" text="Precio/c " />
+                              <TableColumn fx:id="col_iva" prefWidth="53.0" text="IVA" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="tablaProvedores" layoutX="24.0" layoutY="14.0" prefHeight="200.0" prefWidth="238.0">
+                           <columns>
+                              <TableColumn fx:id="col_id_provedor" prefWidth="26.39999008178711" text="ID" />
+                              <TableColumn fx:id="col_Nombre_Provedor" prefWidth="120.79998779296875" text="Nombre_Provedor" />
+                              <TableColumn fx:id="col_Contacto" prefWidth="81.60005187988281" text="Contacto" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tablaCategoria" layoutX="289.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0">
+                           <columns>
+                              <TableColumn fx:id="col_id_categoria" prefWidth="32.0" text="ID" />
+                              <TableColumn fx:id="col_Categoria" prefWidth="168.0" text="Categoria" />
+                           </columns>
+                        </TableView>
+                        <Line endX="611.199951171875" endY="1.52587890625E-5" layoutX="143.0" layoutY="228.0" startX="-123.20001220703125" startY="1.52587890625E-5" strokeWidth="3.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="35.0" layoutX="540.0" layoutY="14.0" opacity="0.54" stroke="BLACK" strokeType="INSIDE" width="167.0" />
+                        <Label layoutX="584.0" layoutY="18.0" text="Buscador" textFill="#2c3e50">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDato_de_Busqueda" layoutX="523.0" layoutY="66.0" prefHeight="26.0" prefWidth="201.0" promptText="Dato a Buscar" />
+                        <CheckBox fx:id="chkProveedores" layoutX="499.0" layoutY="114.0" mnemonicParsing="false" text="Provedores" />
+                        <CheckBox fx:id="chkProductos" layoutX="597.0" layoutY="114.0" mnemonicParsing="false" text="Productos" />
+                        <CheckBox fx:id="chkCategorias" layoutX="685.0" layoutY="114.0" mnemonicParsing="false" text="Categorias" />
+                        <CheckBox fx:id="chkTodos" layoutX="499.0" layoutY="145.0" mnemonicParsing="false" onAction="#accionSeleccionarTodos" text="Todos" />
+                        <Button fx:id="btn_busqueda" layoutX="502.0" layoutY="187.0" mnemonicParsing="false" onAction="#btn_busqueda" prefHeight="26.0" prefWidth="170.0" text="Buscar" />
+                        <Button fx:id="btn_limpiar" layoutX="689.0" layoutY="187.0" mnemonicParsing="false" onAction="#btn_limpiar" prefHeight="26.0" prefWidth="70.0" text="Limpiar" />
+                        <Button fx:id="btn_editar" layoutX="581.0" layoutY="149.0" mnemonicParsing="false" onAction="#btnEditar_Catalogo_Comercial" prefHeight="26.0" prefWidth="89.0" text="Editar" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Editar Catalogo Comercial">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="119.0" layoutY="14.0" prefHeight="26.0" prefWidth="151.0" text="Añadir Proveedor">
+                           <font>
+                              <Font name="Arial Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Line endX="656.0" endY="1.52587890625E-5" layoutX="115.0" layoutY="228.0" startX="-100.0" />
+                        <Line endX="259.20001220703125" endY="-48.70710754394531" layoutX="115.0" layoutY="276.0" startX="259.20001220703125" startY="-252.60000610351562" />
+                        <Label layoutX="530.0" layoutY="14.0" prefHeight="26.0" prefWidth="143.0" text="Añadir Categoria">
+                           <font>
+                              <Font name="Arial Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="305.0" layoutY="229.0" prefHeight="26.0" prefWidth="139.0" text="Añadir Producto">
+                           <font>
+                              <Font name="Arial Black" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="add_numero_proveedor" layoutX="183.0" layoutY="107.0" />
+                        <TextField fx:id="add_nombre_proveedor" layoutX="183.0" layoutY="66.0" />
+                        <Label layoutX="20.0" layoutY="70.0" text="Nombre de Proveedor" />
+                        <Label layoutX="20.0" layoutY="111.0" text="Numero Telefonico" />
+                        <Button fx:id="btn_add_proveedor" layoutX="273.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnAdd" text="Agregar" />
+                        <TextField fx:id="add_nombre_categoria" layoutX="565.0" layoutY="66.0" />
+                        <Label layoutX="397.0" layoutY="70.0" text="Nombre de Categoria" />
+                        <Button fx:id="btn_add_categoria" layoutX="665.0" layoutY="165.0" mnemonicParsing="false" onAction="#btn_add_categoria" text="Agregar" />
+                        <Label layoutX="15.0" layoutY="267.0" text="Nombre de Producto" />
+                        <TextField fx:id="add_nombre_producto" layoutX="153.0" layoutY="263.0" />
+                        <Label layoutX="12.0" layoutY="311.0" text="Proveedor" />
+                        <Label layoutX="14.0" layoutY="358.0" text="Categoria" />
+                        <Label layoutX="15.0" layoutY="406.0" text="Costo Unitario" />
+                        <Label layoutX="491.0" layoutY="267.0" text="Precio Unitario" />
+                        <Label layoutX="491.0" layoutY="302.0" text="Precio Caja" />
+                        <TextField fx:id="add_costo_producto" layoutX="152.0" layoutY="402.0" />
+                        <TextField fx:id="add_precio_uni_producto" layoutX="590.0" layoutY="263.0" />
+                        <TextField fx:id="add_precio_caja_producto" layoutX="590.0" layoutY="298.0" />
+                        <Button fx:id="btn_add_producto" layoutX="673.0" layoutY="341.0" mnemonicParsing="false" text="Agregar" />
+                        <ComboBox fx:id="combo_box_proveedor" layoutX="151.0" layoutY="307.0" prefWidth="150.0" promptText="Seleccione Proveedor" />
+                        <ComboBox fx:id="combo_box_categoria" layoutX="152.0" layoutY="351.0" prefWidth="150.0" promptText="Seleccione Categoria" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Salir">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Reporte de Ventas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="66.0" layoutX="226.0" layoutY="11.0" opacity="0.54" stroke="BLACK" strokeType="INSIDE" width="349.0" />
+        <Label layoutX="266.0" layoutY="26.0" text="Panel de Administrador" textFill="#2c3e50">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
